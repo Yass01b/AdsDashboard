@@ -1,0 +1,31 @@
+# Python cache files
+__pycache__/
+*.py[cod]
+
+# Virtual environment directories
+env/
+venv/
+ENV/
+.env/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Python wheel files
+*.whl
+
+# Byte-compiled files
+*.pyc
+*.pyo
+
+# Distribution / packaging
+*.egg-info/
+dist/
+build/
+
+# MySQL/MariaDB database dump files
+*.sql
+
+# Miscellaneous
+.DS_Store
+Thumbs.db
