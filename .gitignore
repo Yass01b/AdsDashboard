@@ -1,31 +1,13 @@
-# Python cache files
+# Ignore environment variables
+.env
+
+# Ignore Python bytecode files
 __pycache__/
-*.py[cod]
-
-# Virtual environment directories
-env/
-venv/
-ENV/
-.env/
-
-# Jupyter Notebook checkpoints
-.ipynb_checkpoints
-
-# Python wheel files
-*.whl
-
-# Byte-compiled files
 *.pyc
 *.pyo
 
-# Distribution / packaging
-*.egg-info/
-dist/
-build/
+# Ignore IDE/editor settings
+.vscode/
 
-# MySQL/MariaDB database dump files
-*.sql
-
-# Miscellaneous
-.DS_Store
-Thumbs.db
+# Ignore compiled C extensions
+*.so
