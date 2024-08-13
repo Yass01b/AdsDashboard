@@ -9,39 +9,19 @@ from streamlit_option_menu import option_menu
 from numerize.numerize import numerize
 import altair as alt
 import streamlit_shadcn_ui as ui
-from dotenv import load_dotenv
 import os
 import mysql.connector
 
 
 st.set_page_config(page_title="ADVERTISING CHANNEL ANALYSIS", page_icon="", layout="wide")
 
-# Establish connection to MySQL database
-load_dotenv()
+# Initialize connection
+conn = st.connection('mysql', type='sql')
 
-# Get database connection parameters from environment variables
-host = os.getenv("DB_HOST")
-port = os.getenv("DB_PORT")
-user = os.getenv("DB_USER")
-passwd = os.getenv("DB_PASS")
-db = os.getenv("DB_NAME")
-
-cnx = mysql.connector.connect(
-    host=os.getenv('DB_HOST'),
-    port=os.getenv('DB_PORT'),
-    user=os.getenv('DB_USER'),
-    passwd=os.getenv('DB_PASS'),
-    db=os.getenv('DB_NAME')
-)
-
-
-# Create cursor object
-c = cnx.cursor()
-
-
+# Function to fetch data from the database
 def view_all_data():
-    c.execute('SELECT * FROM dashboard_analytics.combined_data;')
-    data = c.fetchall()
+    query = 'SELECT * FROM dashboard_analytics.combined_data;'
+    data = conn.query(query, ttl=600)  # Cached for 10 minutes
     return data
 
 
