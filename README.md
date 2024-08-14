@@ -1,6 +1,7 @@
 # Advertising Campaigns Analysis Dashboard
 
-![Dashboard Screenshot](images/Screenshot.png)  <!https://adsdashboard.streamlit.app -->
+![Dashboard Screenshot](images/Screenshot.PNG)  
+[Live Dashboard](https://adsdashboard.streamlit.app)
 
 ## Overview
 
@@ -32,18 +33,18 @@ The **Advertising Campaigns Analysis Dashboard** is a live analytical tool built
 
 2 - Navigate to the project directory:
 
-cd AdsDashboard
+`cd AdsDashboard`
 
 3 - Install the required Python packages:
 
-pip install -r requirements.txt
+`pip install -r requirements.txt`
 Update .env file (if applicable) with your database connection details.
 
 4 - Usage
 
 Run the Streamlit application:
 
-streamlit run app.py
+`streamlit run app.py`
 
 Open your web browser and go to http://localhost:8501.
 
