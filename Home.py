@@ -29,7 +29,7 @@ data = view_all_data()
 df = pd.DataFrame(data, columns=['Campaign_ID', 'Date_Time', 'Platform_Type', 'Impressions', 'Clicks', 'Conversions', 'Tracked_Ads', 'Cost', 'Revenue', 'Average_Frequency', 'Audience_Reach', 'Unique_Reach', 'On_Target_Impressions', 'Audience_Efficiency_Rate', 'Percentage_On_Target'])
 
 # Logo and title
-st.sidebar.image("data/logo1.png", caption="Advertising campaigns analytics")
+st.sidebar.image("image/logo1.png", caption="Advertising campaigns analytics")
 # Sidebar filters
 st.sidebar.header("Please Filter")
 campaignID = st.sidebar.multiselect(
