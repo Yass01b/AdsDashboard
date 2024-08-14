@@ -10,6 +10,7 @@ from numerize.numerize import numerize
 import altair as alt
 import streamlit_shadcn_ui as ui
 import os
+import base64
 import mysql.connector
 
 
@@ -27,8 +28,21 @@ def view_all_data():
 
 data = view_all_data()
 df = pd.DataFrame(data, columns=['Campaign_ID', 'Date_Time', 'Platform_Type', 'Impressions', 'Clicks', 'Conversions', 'Tracked_Ads', 'Cost', 'Revenue', 'Average_Frequency', 'Audience_Reach', 'Unique_Reach', 'On_Target_Impressions', 'Audience_Efficiency_Rate', 'Percentage_On_Target'])
+
 # Logo and title
-st.sidebar.image("image\logo1.png", caption="Advertising campaigns analytics")
+def load_image(image_path):
+    with open(image_path, "rb") as f:
+        return base64.b64encode(f.read()).decode("utf-8")
+
+# Define the path to your logo image
+image_path = "image/logo1.png"  # Adjust the path as necessary
+
+# Load and encode the image to base64
+encoded_image = load_image(image_path)
+
+# Display the image in the sidebar
+st.sidebar.image("data:image/png;base64," + encoded_image, caption="Advertising campaigns analytics")
+
 # Sidebar filters
 st.sidebar.header("Please Filter")
 campaignID = st.sidebar.multiselect(
